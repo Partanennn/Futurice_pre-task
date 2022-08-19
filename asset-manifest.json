@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/futurice_pre-task/static/css/main.a228e904.css",
+    "main.js": "/futurice_pre-task/static/js/main.f1dda094.js",
+    "index.html": "/futurice_pre-task/index.html",
+    "main.a228e904.css.map": "/futurice_pre-task/static/css/main.a228e904.css.map",
+    "main.f1dda094.js.map": "/futurice_pre-task/static/js/main.f1dda094.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a228e904.css",
+    "static/js/main.f1dda094.js"
+  ]
+}
