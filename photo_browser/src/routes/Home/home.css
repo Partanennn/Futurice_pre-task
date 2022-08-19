@@ -1,0 +1,21 @@
+.home {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.photoGallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vh;
+    width: 70vw;
+}
+
+.photoGallery .thumbnail {
+    margin: 1vh;
+}
+
+/* Centers pagination bar */
+.MuiPagination-root > * {
+    justify-content: center;
+}

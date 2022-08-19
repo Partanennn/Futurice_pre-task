@@ -1,0 +1,26 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh;
+    text-align: center;
+}
+
+.app .title {
+    font-size: 59px;
+    color: black;
+}
+
+.app > .linkHeader {
+    text-decoration: none;
+    background-color: lightgrey;
+}
+
+.photoGallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.photoGallery > .thumbnail {
+    margin: 1vh 1vh 0vh 1vh;
+}
