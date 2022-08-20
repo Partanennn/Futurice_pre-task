@@ -33,7 +33,6 @@ const Home: React.FC = () => {
         _event: React.ChangeEvent<unknown>,
         value: number
     ) => {
-        getPhotos(value);
         setPage(value);
     };
 
@@ -64,8 +63,11 @@ const Home: React.FC = () => {
     };
 
     useEffect(() => {
-        getPhotoCount();
         getPhotos(page);
+    }, [page]);
+
+    useEffect(() => {
+        getPhotoCount();
     }, []);
 
     return (
