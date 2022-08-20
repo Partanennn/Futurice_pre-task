@@ -16,21 +16,21 @@ const PhotoUI: React.FC = () => {
 
     const params = useParams();
 
-    const getPhoto = async () => {
-        setIsLoading(true);
-        const result = await axios.get(
-            `http://jsonplaceholder.typicode.com/photos/${params.photoId}`
-        );
-        if (result.status === 200) {
-            setPhoto(result.data);
-        }
-
-        setIsLoading(false);
-    };
-
     useEffect(() => {
+        const getPhoto = async () => {
+            setIsLoading(true);
+            const result = await axios.get(
+                `http://jsonplaceholder.typicode.com/photos/${params.photoId}`
+            );
+            if (result.status === 200) {
+                setPhoto(result.data);
+            }
+
+            setIsLoading(false);
+        };
+
         getPhoto();
-    }, []);
+    }, [params]);
 
     return (
         <div className="photoContainer">
