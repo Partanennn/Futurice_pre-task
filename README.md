@@ -4,9 +4,9 @@ Pre task for Futurice/Futucare
 
 ### You need
 
-npm
+npm,
 node
 
 ### How to start
 
-run **npm install** inside of **photo_browser** folder. After that run **npm start** inside that folder.
+run **npm install** in root. After that run **npm start**.
