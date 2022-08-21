@@ -20,7 +20,7 @@ const PhotoUI: React.FC = () => {
         const getPhoto = async () => {
             setIsLoading(true);
             const result = await axios.get(
-                `http://jsonplaceholder.typicode.com/photos/${params.photoId}`
+                `https://jsonplaceholder.typicode.com/photos/${params.photoId}`
             );
             if (result.status === 200) {
                 setPhoto(result.data);

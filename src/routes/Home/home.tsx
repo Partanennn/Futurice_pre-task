@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         setIsLoadingPageCount(true);
 
         const response = await axios.get(
-            `http://jsonplaceholder.typicode.com/photos`
+            `https://jsonplaceholder.typicode.com/photos`
         );
         if (response.status === 200) {
             setPageCount(response.data.length / photosPerPage);
