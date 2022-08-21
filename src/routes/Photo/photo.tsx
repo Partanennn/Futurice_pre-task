@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import constants from '../../utility/constants';
 import { Photo } from '../Home/home';
 import './photo.css';
 
@@ -18,10 +19,13 @@ const PhotoUI: React.FC = () => {
 
     useEffect(() => {
         const getPhoto = async () => {
+            const photoId = params.photoId || '';
             setIsLoading(true);
+
             const result = await axios.get(
-                `https://jsonplaceholder.typicode.com/photos/${params.photoId}`
+                constants.getPhoto.replace('{photoId}', photoId)
             );
+
             if (result.status === 200) {
                 setPhoto(result.data);
             }

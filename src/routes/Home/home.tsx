@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Pagination } from '@mui/material';
-import './home.css';
 import axios from 'axios';
+import constants from '../../utility/constants';
+import './home.css';
 
 export interface Photo {
     albumId: number;
@@ -15,7 +16,7 @@ export interface Photo {
 const Home: React.FC = () => {
     const [isLoadingPhotos, setIsLoadingPhotos] = useState(false);
     const [isLoadingPageCount, setIsLoadingPageCount] = useState(false);
-    const [page, setPage] = useState<number>(1);
+    const [page, setPage] = useState(1);
     const [pageCount, setPageCount] = useState(1);
     const [photos, setPhotos] = useState<Photo[]>([]);
 
@@ -40,7 +41,7 @@ const Home: React.FC = () => {
         setIsLoadingPhotos(true);
 
         const response = await axios.get(
-            `http://jsonplaceholder.typicode.com/photos?_page=${newPage}`
+            constants.getPhotosPage.replace('{newPage}', newPage.toString())
         );
         if (response.status === 200) {
             setPhotos(response.data);
@@ -52,9 +53,7 @@ const Home: React.FC = () => {
     const getPhotoCount = async () => {
         setIsLoadingPageCount(true);
 
-        const response = await axios.get(
-            `https://jsonplaceholder.typicode.com/photos`
-        );
+        const response = await axios.get(constants.getPhotos);
         if (response.status === 200) {
             setPageCount(response.data.length / photosPerPage);
         }
