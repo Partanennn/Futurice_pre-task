@@ -14,7 +14,7 @@ const App: React.FC = () => (
 
         <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="photos/:photoId" element={<PhotoUI />} />
+            <Route path="/photos/:photoId" element={<PhotoUI />} />
             <Route
                 path="*"
                 element={
